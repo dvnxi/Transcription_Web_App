@@ -37,7 +37,7 @@ uploaded_file = st.file_uploader("Upload an audio file", type=["mp3", "wav", "m4
 def load_model():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     st.info(f"Loading Whisper Large-v3 model on {device.upper()}... (this may take a while)")
-    model = whisper.load_model("large-v3", device=device)
+    model = whisper.load_model("medium", device=device)
     st.success("Model loaded successfully!")
     return model, device
 
